@@ -1,42 +1,57 @@
-article > *:not(.entry-content),
-.entry-content > * {
-    @apply mx-auto max-w-content;
+body {
+  @apply overflow-x-hidden;
 }
 
-.entry-content, .block-editor-block-list__layout {
-    h1 {
-        @apply text-2xl;
+article > *:not(.entry-content),
+.entry-content > * {
+  @apply mx-auto max-w-content;
+}
+
+.entry-content,
+.block-editor-block-list__layout {
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+
+  p,
+  ul,
+  ol {
+    a {
+      @apply text-blue-500 underline;
+
+      &:hover {
+        @apply no-underline;
+      }
     }
 
-    h2 {
-        @apply text-xl;
+    @apply mb-8;
+  }
+
+  ul:not(.block-editor-block-variation-picker__variations) {
+    li {
+      @apply list-disc list-inside;
     }
+  }
 
-    h3 {
-        @apply text-lg;
+  ol {
+    li {
+      @apply list-decimal list-inside;
     }
+  }
+}
 
-    p, ul, ol {
-        a {
-            @apply text-blue-500 underline;
-
-            &:hover {
-                @apply no-underline;
-            }
-        }
-
-        @apply mb-8;
-    }
-
-    ul:not(.block-editor-block-variation-picker__variations) {
-        li {
-            @apply list-disc list-inside;
-        }
-    }
-
-    ol {
-        li {
-            @apply list-decimal list-inside;
-        }
-    }
+/* Custom styles for vertical pagination */
+.swiper-pagination {
+  @apply absolute right-2 top-1/2 transform -translate-y-1/2 flex flex-col;
+}
+.swiper-pagination-bullet {
+  @apply my-1; /* Adjust margin as needed */
 }

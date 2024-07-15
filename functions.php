@@ -1,4 +1,6 @@
 <?php
+require_once 'inc/acf-blocks.php';
+require_once 'inc/enqueue.php';
 
 /**
  * Theme setup.
@@ -24,7 +26,6 @@ function lavre_theme_setup()
 		)
 	);
 
-	add_theme_support('custom-logo');
 	add_theme_support('post-thumbnails');
 
 	add_theme_support('align-wide');
@@ -117,3 +118,17 @@ function lavre_theme_nav_menu_add_submenu_class($classes, $args, $depth)
 }
 
 add_filter('nav_menu_submenu_css_class', 'lavre_theme_nav_menu_add_submenu_class', 10, 3);
+
+// ACF Options Page
+if (
+	function_exists('acf_add_options_page')
+) {
+
+	acf_add_options_page(array(
+		'page_title'    => 'Theme General Settings',
+		'menu_title'    => 'Theme Settings',
+		'menu_slug'     => 'theme-general-settings',
+		'capability'    => 'edit_posts',
+		'redirect'      => false
+	));
+}

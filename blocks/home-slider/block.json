@@ -1,0 +1,15 @@
+{
+    "name": "acf/home-slider",
+    "title": "Home Slider",
+    "description": "A custom home slider block that uses ACF fields.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["slider", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "home-slider.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
