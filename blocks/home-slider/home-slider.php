@@ -29,7 +29,7 @@ if (!empty($block['align'])) {
 $slides = get_field('slides'); ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper max-h-[631px] h-auto">
         <div class="swiper-wrapper">
             <?php
             foreach ($slides as $slide) : ?>
@@ -46,7 +46,7 @@ $slides = get_field('slides'); ?>
                             $slide['image'],
                             'full',
                             false,
-                            array('class' => 'slide-img')
+                            array('class' => 'slide-img object-cover h-full w-full')
                         ); ?>
                     </div>
                 </div>
@@ -54,6 +54,12 @@ $slides = get_field('slides'); ?>
             endforeach ?>
         </div>
         <div class="swiper-pagination"></div>
+        <div class="autoplay-progress absolute bottom-4 right-4 z-10 w-12 h-12 flex items-center justify-center font-bold text-white">
+            <svg style="position: absolute; left: 0; top: 0; z-index: 10; width: 100%; height: 100%; stroke-width: 4px; stroke: white; fill: none; stroke-dashoffset: calc(125.6px * (1 - var(--progress))); stroke-dasharray: 125.6; transform: rotate(-90deg);" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span></span>
+        </div>
     </div>
 </section>
 

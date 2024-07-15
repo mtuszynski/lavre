@@ -1,0 +1,15 @@
+{
+    "name": "acf/wc-category",
+    "title": "Woocommerce Category",
+    "description": "A custom woocommerce category block that uses ACF fields.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["category", "woocommerce", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "wc-category.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

@@ -17,6 +17,7 @@ function lavre_register_acf_blocks()
      */
     $blocks_dir = get_template_directory() . '/blocks/';
     register_block_type($blocks_dir . 'home-slider');
+    register_block_type($blocks_dir . 'wc-category');
 }
 
 add_action('init', 'lavre_register_acf_blocks');
