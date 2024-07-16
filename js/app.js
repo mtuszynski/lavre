@@ -9,8 +9,9 @@
 
 // Navigation toggle
 window.addEventListener("load", function () {
+  var _document$querySelect;
   var main_navigation = document.querySelector("#primary-menu");
-  document.querySelector("#primary-menu-toggle").addEventListener("click", function (e) {
+  (_document$querySelect = document.querySelector("#primary-menu-toggle")) === null || _document$querySelect === void 0 || _document$querySelect.addEventListener("click", function (e) {
     e.preventDefault();
     main_navigation.classList.toggle("hidden");
   });

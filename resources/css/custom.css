@@ -21,6 +21,11 @@ article > *:not(.entry-content),
     @apply text-lg;
   }
 
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
   p,
   ul,
   ol {
@@ -54,4 +59,9 @@ article > *:not(.entry-content),
 }
 .swiper-pagination-bullet {
   @apply my-1; /* Adjust margin as needed */
+}
+
+.text-menu {
+  font-size: 0.875rem;
+  line-height: 2rem;
 }
