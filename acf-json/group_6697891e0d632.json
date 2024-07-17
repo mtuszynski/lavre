@@ -1,0 +1,46 @@
+{
+    "key": "group_6697891e0d632",
+    "title": "Popular products",
+    "fields": [
+        {
+            "key": "field_6697891f273bf",
+            "label": "Numbers of products",
+            "name": "products_amount",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 5,
+            "min": 5,
+            "max": 15,
+            "placeholder": "",
+            "step": 5,
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/popular-products"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1721207255
+}

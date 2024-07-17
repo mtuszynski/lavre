@@ -1,0 +1,15 @@
+{
+    "name": "acf/popular-products",
+    "title": "Popular products",
+    "description": "A custom -popular products block that uses ACF fields.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["popular","products", "woocommerce" , "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "popular-products.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

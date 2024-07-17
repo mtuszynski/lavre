@@ -6,12 +6,7 @@
  * @param array $block The block settings and attributes.
  */
 
-// Load values and assign defaults.
-$bck_image = get_field('bck_image');
-$title = !empty(get_field('title')) ? get_field('title') : 'Dodaj tytuł';
-$text = get_field('text');
-$image = get_field('image');
-$button = get_field('button');
+$sign = get_field('sign');
 // Support custom "anchor" values.
 $id = 'home-slider-' . $block['id'];
 if (!empty($block['anchor'])) {
@@ -28,7 +23,7 @@ if (!empty($block['align'])) {
 }
 $slides = get_field('slides'); ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> relative">
     <div class="swiper mySwiper max-h-[631px] h-auto">
         <div class="swiper-wrapper">
             <?php
@@ -36,12 +31,13 @@ $slides = get_field('slides'); ?>
                 <div class="swiper-slide w-full flex">
                     <div class="w-6/12 flex justify-center items-center">
                         <div>
-                            <h2><?php echo $slide['title'] ?></h2>
+                            <h2 class="text-6xl font-bold"><?php echo $slide['title'] ?></h2>
                             <p><?php echo $slide['text'] ?></p>
-                            <a href="<?php echo $slide['link']['url'] ?>" class="btn"><?php echo $slide['link']['title'] ?></a>
+                            <a href="<?php echo $slide['link']['url'] ?>" class="btn btn-primary"><?php echo $slide['link']['title'] ?></a>
                         </div>
                     </div>
-                    <div class="w-6/12">
+                    <div class="w-6/12 relative">
+                        <span class="before:content-[''] before:bg-light before:absolute before:h-full before:w-32 before:top-0 before:bottom-0 before:-left-32"></span>
                         <? echo wp_get_attachment_image(
                             $slide['image'],
                             'full',
@@ -61,6 +57,7 @@ $slides = get_field('slides'); ?>
             <span></span>
         </div>
     </div>
+    <img src="<?php echo $sign; ?>" alt="" class="absolute -bottom-28 right-60 z-10">
 </section>
 
 </div>

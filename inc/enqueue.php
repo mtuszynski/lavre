@@ -6,15 +6,13 @@
 function lavre_theme_enqueue_scripts()
 {
     $theme = wp_get_theme();
-
-    wp_enqueue_style('tailpress', lavre_theme_asset('css/app.css'), array(), $theme->get('Version'));
-    wp_enqueue_script('tailpress', lavre_theme_asset('js/app.js'), array(), $theme->get('Version'));
-
     global $post;
     if (is_a($post, 'WP_Post') && has_block_in_content('acf/home-slider', $post->post_content)) {
         wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
         wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
     }
+    wp_enqueue_style('tailpress', lavre_theme_asset('css/app.css'), array(), $theme->get('Version'));
+    wp_enqueue_script('tailpress', lavre_theme_asset('js/app.js'), array(), $theme->get('Version'));
 }
 
 add_action('wp_enqueue_scripts', 'lavre_theme_enqueue_scripts');
@@ -50,3 +48,35 @@ function has_block_in_content($block_name, $post_content)
     }
     return false;
 }
+function custom_separator_block_assets()
+{
+    $dir = get_template_directory_uri() . '/blocks/custom-separator/';
+
+    wp_register_script(
+        'custom-unique-separator-block',
+        $dir . 'index.js',
+        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'),
+        filemtime(get_template_directory() . '/blocks/custom-separator/index.js'),
+    );
+
+    wp_register_style(
+        'custom-unique-separator-editor-style',
+        $dir . 'editor.css',
+        array('wp-edit-blocks'),
+        filemtime(get_template_directory() . '/blocks/custom-separator/editor.css')
+    );
+
+    wp_register_style(
+        'custom-unique-separator-style',
+        $dir . 'style.css',
+        array(),
+        filemtime(get_template_directory() . '/blocks/custom-separator/style.css')
+    );
+
+    register_block_type('custom/unique-separator', array(
+        'editor_script' => 'custom-unique-separator-block',
+        'editor_style' => 'custom-unique-separator-editor-style',
+        'style' => 'custom-unique-separator-style',
+    ));
+}
+add_action('init', 'custom_separator_block_assets');

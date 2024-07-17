@@ -35,11 +35,11 @@ $selected_categories = get_field('select_categories');
                 $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
                 $image = wp_get_attachment_image_src($thumbnail_id, 'full');
 
-                echo '<div class="col">';
+                echo '<div class="flex flex-col gap-8 items-center">';
                 if ($image) {
                     echo '<img class="w-full h-auto" src="' . esc_url($image[0]) . '" alt="' . esc_attr($category->name) . '">';
                 }
-                echo '<h2 class="text-lg font-bold mt-2"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></h2>';
+                echo '<div class="text-lg font-bold"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></div>';
                 echo '</div>';
             }
             echo '<div class="col text-center">';

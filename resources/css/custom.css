@@ -65,3 +65,22 @@ article > *:not(.entry-content),
   font-size: 0.875rem;
   line-height: 2rem;
 }
+
+.btn {
+  @apply uppercase py-4;
+}
+
+.btn-primary {
+  @apply bg-primary text-white w-44;
+}
+.separator {
+  @apply w-full h-0.5;
+  background: repeating-linear-gradient(
+    to right,
+    black 0,
+    black 10px,
+    transparent 10px,
+    transparent 15px
+  );
+  @apply my-20;
+}
