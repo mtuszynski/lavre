@@ -352,25 +352,6 @@
                     "preview_size": "medium"
                 },
                 {
-                    "key": "field_669464f8d975e",
-                    "label": "Tekst obok ikony",
-                    "name": "text_second",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
                     "key": "field_66946519d9760",
                     "label": "Ikona trzecia",
                     "name": "icon_third",
@@ -393,25 +374,6 @@
                     "max_size": "",
                     "mime_types": "",
                     "preview_size": "medium"
-                },
-                {
-                    "key": "field_6694652dd9761",
-                    "label": "Tekst obok ikony trzeciej",
-                    "name": "text_third",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
                 }
             ]
         },
@@ -706,5 +668,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721133482
+    "modified": 1721892080
 }

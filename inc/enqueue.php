@@ -48,35 +48,3 @@ function has_block_in_content($block_name, $post_content)
     }
     return false;
 }
-function custom_separator_block_assets()
-{
-    $dir = get_template_directory_uri() . '/blocks/custom-separator/';
-
-    wp_register_script(
-        'custom-unique-separator-block',
-        $dir . 'index.js',
-        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'),
-        filemtime(get_template_directory() . '/blocks/custom-separator/index.js'),
-    );
-
-    wp_register_style(
-        'custom-unique-separator-editor-style',
-        $dir . 'editor.css',
-        array('wp-edit-blocks'),
-        filemtime(get_template_directory() . '/blocks/custom-separator/editor.css')
-    );
-
-    wp_register_style(
-        'custom-unique-separator-style',
-        $dir . 'style.css',
-        array(),
-        filemtime(get_template_directory() . '/blocks/custom-separator/style.css')
-    );
-
-    register_block_type('custom/unique-separator', array(
-        'editor_script' => 'custom-unique-separator-block',
-        'editor_style' => 'custom-unique-separator-editor-style',
-        'style' => 'custom-unique-separator-style',
-    ));
-}
-add_action('init', 'custom_separator_block_assets');

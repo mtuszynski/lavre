@@ -5,7 +5,7 @@
  */
 $socials = get_field('socials', 'option');
 ?>
-<div class="fixed top-32 right-6 hidden md:block z-10">
+<div class="fixed top-32 right-6 hidden lg:flex z-10">
     <ul class="flex flex-col gap-2.5">
         <?php
         if (have_rows('socials', 'option')) :

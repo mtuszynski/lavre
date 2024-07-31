@@ -1,0 +1,46 @@
+{
+    "key": "group_669a6cc449177",
+    "title": "Featured products",
+    "fields": [
+        {
+            "key": "field_669a6cc58d3f2",
+            "label": "Numbers of products",
+            "name": "products_amount",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 5,
+            "min": 5,
+            "max": 15,
+            "placeholder": "",
+            "step": 5,
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/featured-products"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1721396709
+}

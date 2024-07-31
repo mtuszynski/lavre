@@ -10,31 +10,73 @@
 // Navigation toggle
 window.addEventListener("load", function () {
   var _document$querySelect;
-  var main_navigation = document.querySelector("#primary-menu");
+  var main_navigation = document.querySelector("#menu-nav");
   (_document$querySelect = document.querySelector("#primary-menu-toggle")) === null || _document$querySelect === void 0 || _document$querySelect.addEventListener("click", function (e) {
     e.preventDefault();
     main_navigation.classList.toggle("hidden");
   });
+  var myslider = document.querySelector(".mySwiper");
   var progressCircle = document.querySelector(".autoplay-progress svg");
   var progressContent = document.querySelector(".autoplay-progress span");
-  var swiper = new Swiper(".mySwiper", {
-    direction: "vertical",
-    autoplay: {
-      delay: 15000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: ".swiper-pagination"
-    },
-    on: {
-      autoplayTimeLeft: function autoplayTimeLeft(s, time, progress) {
-        if (progressCircle !== null) {
-          progressCircle.style.setProperty("--progress", 1 - progress);
-          progressContent.textContent = "".concat(Math.ceil(time / 1000), "s");
+  if (myslider) {
+    var swiper = new Swiper(".mySwiper", {
+      direction: "horizontal",
+      autoplay: {
+        delay: 15000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      on: {
+        autoplayTimeLeft: function autoplayTimeLeft(s, time, progress) {
+          if (progressCircle !== null) {
+            progressCircle.style.setProperty("--progress", 1 - progress);
+            progressContent.textContent = "".concat(Math.ceil(time / 1000), "s");
+          }
         }
       }
+    });
+  }
+  window.addEventListener("scroll", function () {
+    var header = document.querySelector("header");
+    var scrollPosition = window.scrollY;
+    if (scrollPosition > 50) {
+      header.classList.add("header-scrolled");
+    } else {
+      header.classList.remove("header-scrolled");
     }
   });
+  var descToggle = document.querySelector(".desc-toggle");
+  if (descToggle) {
+    var productDescription = document.querySelector(".product-description");
+    var gradientOverlay = document.querySelector(".gradient-overlay");
+    descToggle.addEventListener("click", function () {
+      productDescription.classList.toggle("expanded");
+      gradientOverlay.classList.toggle("hidden");
+      if (gradientOverlay.classList.contains("hidden")) {
+        descToggle.textContent = "Zwiń >";
+      } else {
+        descToggle.textContent = "Rozwiń >";
+      }
+    });
+  }
+  var productContent = document.getElementById("product-single-content");
+  var entrySummary = document.querySelector(".entry-summary");
+  if (productContent && entrySummary) {
+    var updateHeight = function updateHeight() {
+      var height = entrySummary.offsetHeight;
+      productContent.style.minHeight = "".concat(height, "px");
+    };
+    var resizeObserver = new ResizeObserver(function (entries) {
+      entries.forEach(function (entry) {
+        updateHeight();
+      });
+    });
+    resizeObserver.observe(entrySummary);
+    updateHeight();
+  }
 });
 
 /***/ }),

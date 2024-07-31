@@ -27,21 +27,17 @@ if (!empty($block['className'])) {
 if (!empty($block['align'])) {
     $className .= ' align' . $block['align'];
 }
-?>
-<div class="separator"></div>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> relative">
-    <?php
-    $products = new WP_Query($args);
-    if ($products->have_posts()) { ?>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
+$products = new WP_Query($args);
+if ($products->have_posts()) { ?>
+    <div class="separator alignfull"></div>
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> relative woocommerce py-8">
+        <h2 class="text-3xl font-bold mb-10">Najczęściej kupowane</h2>
+        <div class="products products-list clear-both grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-9 pb-16">
             <?php while ($products->have_posts()) {
                 $products->the_post();
                 wc_get_template_part('content', 'product');
             } ?>
         </div>
-    <?php } else {
-        echo 'No popular products found.';
-    }
-
-    wp_reset_postdata(); ?>
-</section>
+        <?php wp_reset_postdata(); ?>
+    </section>
+<?php }

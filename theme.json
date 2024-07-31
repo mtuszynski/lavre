@@ -3,7 +3,7 @@
   "settings": {
     "layout": {
       "contentSize": "1620px",
-      "wideSize": "1820px"
+      "wideSize": "1830px"
     },
     "color": {
       "palette": [
@@ -15,7 +15,7 @@
         {
           "name": "Secondary",
           "slug": "secondary",
-          "color": "#18457B"
+          "color": "#EFEFEF"
         },
         {
           "name": "Border",
@@ -36,10 +36,28 @@
           "name": "Light",
           "slug": "light",
           "color": "#F7F7F5"
+        },
+        {
+          "name": "Small",
+          "slug": "small",
+          "color": "#123660"
+        },
+        {
+          "name": "Pagination",
+          "slug": "pagination",
+          "color": "#1959A4"
+        },
+        {
+          "name": "Price",
+          "slug": "price",
+          "color": "#54A419"
         }
       ]
     },
     "typography": {
+      "fontFamily": {
+        "default": "Montserrat, sans-serif"
+      },
       "fontSizes": [
         {
           "name": "Small",
@@ -72,6 +90,15 @@
           "size": "1.875rem"
         }
       ]
+    }
+  },
+  "styles": {
+    "elements": {
+      "link": {
+        "typography": {
+          "textDecoration": "none"
+        }
+      }
     }
   }
 }
