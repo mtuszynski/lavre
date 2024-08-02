@@ -1689,9 +1689,6 @@ html:not(.dgwt-wcas-overlay-mobile-on)
   margin: 0px;
   color: #161514;
 }
-.product-overlay .yith-wcwl-add-to-wishlist {
-  background-color: #fff;
-}
 .product-overlay
   .yith-wcwl-add-to-wishlist
   .add_to_wishlist.single_add_to_wishlist {
