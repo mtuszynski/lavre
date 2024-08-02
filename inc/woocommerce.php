@@ -111,7 +111,7 @@ function custom_price_with_prefix()
 {
     global $product;
     $price = $product->get_price_html();
-    echo '<div class="custom-price pt-4"><div class="custom-price-text text-sm font-light">Cena:</div> ' . $price . '</div>';
+    echo '<div class="pt-4"><div class="custom-price-text text-sm font-light">Cena:</div></div><span class="price custom-price">' . $price . '</span>';
 }
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
@@ -127,7 +127,9 @@ function add_payment_info()
 add_action('woocommerce_single_product_summary', 'add_payment_info', 11);
 function text_show_stock_shop()
 {
+
     global $product;
+
     if (!$product) {
         return;
     }
@@ -157,3 +159,8 @@ function bbloomer_change_gallery_columns()
 {
     return 1;
 }
+function add_custom_div_before_variations_form()
+{
+    echo '<div class="custom-div">Dostępne kolory:</div>';
+}
+add_action('woocommerce_before_variations_form', 'add_custom_div_before_variations_form');

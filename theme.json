@@ -55,6 +55,7 @@
       ]
     },
     "typography": {
+      "fluid": true,
       "fontFamily": {
         "default": "Montserrat, sans-serif"
       },
@@ -88,7 +89,16 @@
           "slug": "xxxl",
           "name": "3XL",
           "size": "1.875rem"
-        }
+        },
+        {
+        "size": "3rem",
+        "fluidSize": {
+          "min": "1.5rem",
+          "max": "3rem"
+        },
+        "slug": "extralarge",
+        "name": "Extra Large"
+      }
       ]
     }
   },
