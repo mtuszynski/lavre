@@ -36,5 +36,5 @@ function custom_recently_viewed_products()
         }
     }
 }
-add_action('woocommerce_after_single_product_summary', 'custom_recently_viewed_products', 20);
+add_action('woocommerce_after_single_product_summary', 'custom_recently_viewed_products', 40);
 add_action('woocommerce_after_shop_loop', 'custom_recently_viewed_products', 20);

@@ -3,6 +3,7 @@ require_once 'woo/custom-category-header.php';
 require_once 'woo/recently-viewed-products.php';
 require_once 'woo/quantity-buttons.php';
 require_once 'woo/category-section.php';
+require_once 'woo/best-selling-products.php';
 
 add_theme_support('post-thumbnails');
 add_image_size('post-futured', 600, 370, array('center', 'center'), true);
@@ -164,3 +165,10 @@ function add_custom_div_before_variations_form()
     echo '<div class="custom-div">Dostępne kolory:</div>';
 }
 add_action('woocommerce_before_variations_form', 'add_custom_div_before_variations_form');
+
+
+add_action('woocommerce_before_shop_loop', 'custom_line', 25);
+function custom_line()
+{
+    echo '<div class="archive-product-line w-full clear-both"></div>';
+}

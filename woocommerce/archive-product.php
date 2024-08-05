@@ -37,16 +37,18 @@ do_action('woocommerce_before_main_content');
  */
 do_action('woocommerce_shop_loop_header'); ?>
 <div class="container mx-auto">
-	<?php if (woocommerce_product_loop()) {
-
-		/**
-		 * Hook: woocommerce_before_shop_loop.
-		 *
-		 * @hooked woocommerce_output_all_notices - 10
-		 * @hooked woocommerce_result_count - 20
-		 * @hooked woocommerce_catalog_ordering - 30
-		 */
-		do_action('woocommerce_before_shop_loop'); ?>
+	<?php if (woocommerce_product_loop()) { ?>
+		<div class="flex items-baseline justify-between md:flex-row flex-col gap-4">
+			<?php
+			/**
+			 * Hook: woocommerce_before_shop_loop.
+			 *
+			 * @hooked woocommerce_output_all_notices - 10
+			 * @hooked woocommerce_result_count - 20
+			 * @hooked woocommerce_catalog_ordering - 30
+			 */
+			do_action('woocommerce_before_shop_loop'); ?>
+		</div>
 		<div class="products products-list clear-both grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-9 pb-16">
 
 
