@@ -9,7 +9,6 @@ body {
   }
 
   h2 {
-    @apply text-xl;
   }
 
   h3 {
@@ -586,4 +585,17 @@ table.variations label {
     transparent 10px,
     transparent 20px
   );
+}
+.category-item {
+  flex: 0 1 calc(50% - 1.7rem);
+}
+@media (min-width: 768px) {
+  .category-item {
+    flex: 0 1 calc(33.3333% - 1.7rem);
+  }
+}
+@media (min-width: 1024px) {
+  .category-item {
+    flex: 0 1 calc(16.6667% - 1.7rem);
+  }
 }

@@ -59,5 +59,4 @@ $slides = get_field('slides'); ?>
     </div>
     <img src="<?php echo $sign; ?>" alt="" class="absolute -bottom-28 right-60 z-10 hidden lg:block">
 </section>
-
-</div>
+<div class="pb-12 lg:pb-48"></div>

@@ -1023,6 +1023,9 @@ video {
 .pb-10{
   padding-bottom: 2.5rem;
 }
+.pb-12{
+  padding-bottom: 3rem;
+}
 .pb-16{
   padding-bottom: 4rem;
 }
@@ -1285,10 +1288,8 @@ body{
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.entry-content h2, .block-editor-block-list__layout h2{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
+.entry-content h2, .block-editor-block-list__layout h2 {
+  }
 .entry-content h3, .block-editor-block-list__layout h3{
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2088,6 +2089,19 @@ table.variations label{
     transparent 20px
   );
 }
+.category-item {
+  flex: 0 1 calc(50% - 1.7rem);
+}
+@media (min-width: 768px) {
+  .category-item {
+    flex: 0 1 calc(33.3333% - 1.7rem);
+  }
+}
+@media (min-width: 1024px) {
+  .category-item {
+    flex: 0 1 calc(16.6667% - 1.7rem);
+  }
+}
 .before\:absolute::before{
   content: var(--tw-content);
   position: absolute;
@@ -2248,16 +2262,16 @@ table.variations label{
     width: 50%;
   }
 
-  .md\:w-\[calc\(60\%-50px\)\]{
-    width: calc(60% - 50px);
-  }
-
   .md\:w-4\/12{
     width: 33.333333%;
   }
 
   .md\:w-8\/12{
     width: 66.666667%;
+  }
+
+  .md\:w-\[calc\(60\%-50px\)\]{
+    width: calc(60% - 50px);
   }
 
   .md\:grid-cols-2{
@@ -2345,10 +2359,6 @@ table.variations label{
     width: 58.333333%;
   }
 
-  .lg\:w-8\/12{
-    width: 66.666667%;
-  }
-
   .lg\:grid-cols-5{
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -2372,6 +2382,10 @@ table.variations label{
   .lg\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .lg\:pb-48{
+    padding-bottom: 12rem;
   }
 
   .lg\:text-\[41px\]{
