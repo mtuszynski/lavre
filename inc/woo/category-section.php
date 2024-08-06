@@ -6,7 +6,7 @@ function lavre_category_category()
         'taxonomy' => 'product_cat',
         'orderby' => 'name',
         'order'   => 'ASC',
-        'hide_empty' => false,
+        'hide_empty' => true,
         'number' => is_shop() ? false : 5,
     ));
 
@@ -33,10 +33,8 @@ function lavre_category_category()
                 </div>
             <?php
             }
-            echo '</div>';
-
             if (!is_shop()) { ?>
-                <div class="flex flex-col w-full h-full">
+                <div class="category-item flex flex-col w-full h-full">
                     <a class="bg-light rounded-full aspect-square flex items-center justify-center group" href="<?php echo get_permalink(get_option('page_for_posts')) ?>">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97.443" height="47.197" viewBox="0 0 97.443 47.197" class="transition-transform duration-300 group-hover:scale-110">
                             <defs>
@@ -51,6 +49,7 @@ function lavre_category_category()
                     </a>
                 </div>
     <?php }
+            echo '</div>';
         }
     }
     add_action('woocommerce_after_shop_loop', 'lavre_category_category', 15);

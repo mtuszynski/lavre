@@ -39,6 +39,12 @@ function custom_shop_loop_header()
                 </g>
             </svg>
         </div>
-<?php }
+    <?php }
+    if (is_shop()) { ?>
+        <div class="container mx-auto pt-12 pb-20">
+            <h1 class="text-3xl sm:text-5xl font-extrabold pb-2.5">Sklep</h1>
+            <?php woocommerce_breadcrumb(); ?>
+        </div>
+<? }
 }
 add_action('woocommerce_shop_loop_header', 'custom_shop_loop_header', 10);
