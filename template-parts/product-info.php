@@ -1,5 +1,5 @@
 <?php
-//
+// Global product info template displayed on product page
 ?>
 <div class="global-prod-info">
     <ul class="list-none grid grid-cols-1 sm:grid-cols-3 justify-between w-full border border-light md:flex-wrap lg:px-6 px-4 gap-2">
@@ -11,7 +11,7 @@
                 </g>
             </svg>
 
-            <span class="">Dostępność:<br>
+            <span class=""><?php echo __('Dostępność', 'lavre'); ?><br>
                 <b>
                     <?php
                     text_show_stock_shop();
@@ -41,10 +41,10 @@
                 </g>
             </svg>
             <span class="hidden sm:block">
-                wysyłka:<br> <b>w 24 godziny</b>
+                <?php echo __('wysyłka: ', 'lavre'); ?><br> <b><?php echo __('w 24 godziny', 'lavre'); ?></b>
             </span>
             <span class="block sm:hidden">
-                wysyłka: <b>w 24 godziny</b>
+                <?php echo __('wysyłka: ', 'lavre'); ?> <b><?php echo __('w 24 godziny', 'lavre'); ?></b>
             </span>
         </li>
         <li class="flex flex-col xlg:flex-row items-center justify-center gap-2 py-6">
@@ -57,11 +57,11 @@
                 </g>
             </svg>
             <span class="hidden sm:block">
-                <b>Darmowa wysyłka</b><br>
-                już od 200 zł
+                <b><?php echo __('Darmowa wysyłka ', 'lavre'); ?></b><br>
+                <?php echo __('już od 200 zł', 'lavre'); ?>
             </span>
             <span class="block sm:hidden">
-                <b>Darmowa wysyłka </b>już od 200 zł
+                <b><?php echo __('Darmowa wysyłka ', 'lavre'); ?></b><?php echo __('już od 200 zł', 'lavre'); ?>
             </span>
         </li>
     </ul>

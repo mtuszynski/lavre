@@ -38,35 +38,36 @@ do_action('woocommerce_before_main_content');
 do_action('woocommerce_shop_loop_header'); ?>
 <div class="container mx-auto">
 	<?php if (woocommerce_product_loop()) { ?>
-		<div class="flex items-baseline justify-between md:flex-row flex-col gap-4">
-			<?php
-			/**
-			 * Hook: woocommerce_before_shop_loop.
-			 *
-			 * @hooked woocommerce_output_all_notices - 10
-			 * @hooked woocommerce_result_count - 20
-			 * @hooked woocommerce_catalog_ordering - 30
-			 */
-			do_action('woocommerce_before_shop_loop'); ?>
-		</div>
-		<div class="products products-list clear-both grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-9 pb-16">
+		<?php if (!is_shop()) { ?>
+			<div class="flex items-baseline justify-between md:flex-row flex-col gap-4">
+				<?php
+				/**
+				 * Hook: woocommerce_before_shop_loop.
+				 *
+				 * @hooked woocommerce_output_all_notices - 10
+				 * @hooked woocommerce_result_count - 20
+				 * @hooked woocommerce_catalog_ordering - 30
+				 */
+				do_action('woocommerce_before_shop_loop'); ?>
+			</div>
+			<div class="products products-list clear-both grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-9 pb-16">
 
 
-			<?php if (wc_get_loop_prop('total')) {
-				while (have_posts()) {
-					the_post();
+				<?php if (wc_get_loop_prop('total')) {
+					while (have_posts()) {
+						the_post();
 
-					/**
-					 * Hook: woocommerce_shop_loop.
-					 */
-					do_action('woocommerce_shop_loop');
+						/**
+						 * Hook: woocommerce_shop_loop.
+						 */
+						do_action('woocommerce_shop_loop');
 
-					wc_get_template_part('content', 'product');
-				}
-			} ?>
+						wc_get_template_part('content', 'product');
+					}
+				} ?>
 
-		</div>
-	<?php
+			</div>
+	<?php }
 		/**
 		 * Hook: woocommerce_after_shop_loop.
 		 *
@@ -79,7 +80,9 @@ do_action('woocommerce_shop_loop_header'); ?>
 		 *
 		 * @hooked wc_no_products_found - 10
 		 */
-		do_action('woocommerce_no_products_found');
+		if (!is_shop()) {
+			do_action('woocommerce_no_products_found');
+		}
 	}
 
 	/**

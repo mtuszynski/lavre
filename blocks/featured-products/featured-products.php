@@ -37,7 +37,7 @@ if ($featured_products->have_posts()) {
 ?>
     <div class="separator alignfull"></div>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> relative woocommerce py-8">
-        <h2 class="text-3xl font-bold mb-10">Polecane produkty</h2>
+        <h2 class="text-3xl font-bold mb-10"><?php echo esc_html__('Polecane produkty', 'lavre'); ?></h2>
         <div class="products products-list clear-both grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-9 pb-16">
             <?php while ($featured_products->have_posts()) {
                 $featured_products->the_post();

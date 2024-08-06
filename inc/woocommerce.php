@@ -4,7 +4,7 @@ require_once 'woo/recently-viewed-products.php';
 require_once 'woo/quantity-buttons.php';
 require_once 'woo/category-section.php';
 require_once 'woo/best-selling-products.php';
-
+//copy code from face&look theme
 add_theme_support('post-thumbnails');
 add_image_size('post-futured', 600, 370, array('center', 'center'), true);
 add_image_size('post-futured-grid', 100, 100, array('center', 'center'), true);
@@ -54,7 +54,7 @@ add_filter('woocommerce_breadcrumb_home_url', 'custom_breadcrumb_home_url');
 
 function custom_breadcrumb_defaults($defaults)
 {
-    $defaults['home'] = 'Sklep';
+    $defaults['home'] = __('Sklep', 'lavre');
     return $defaults;
 }
 add_filter('woocommerce_breadcrumb_defaults', 'custom_breadcrumb_defaults');
@@ -103,7 +103,7 @@ function remove_product_tabs($tabs)
 
     return $tabs;
 }
-
+//Create new price with label before price
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
 
 add_action('woocommerce_single_product_summary', 'custom_price_with_prefix', 10);
@@ -112,7 +112,7 @@ function custom_price_with_prefix()
 {
     global $product;
     $price = $product->get_price_html();
-    echo '<div class="pt-4"><div class="custom-price-text text-sm font-light">Cena:</div></div><span class="price custom-price">' . $price . '</span>';
+    echo '<div class="pt-4"><div class="custom-price-text text-sm font-light">' . __('Cena:', 'lavre') . '</div></div><span class="price custom-price">' . $price . '</span>';
 }
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
@@ -139,13 +139,13 @@ function text_show_stock_shop()
     if ($stock_html) {
         $stock_quantity = $product->get_stock_quantity();
         if ($stock_quantity == 0) {
-            echo '<p class="stock-status" style="color: red;">Brak</p>';
+            echo '<p class="stock-status" style="color: red;">' . __('Brak', 'lavre') . '</p>';
         } elseif ($stock_quantity < 10 && $stock_quantity > 0) {
-            echo '<p class="stock-status" style="color: orange;">Mała</p>';
+            echo '<p class="stock-status" style="color: orange;">' . __('Mała', 'lavre') . '</p>';
         } elseif ($stock_quantity >= 10 && $stock_quantity < 20) {
-            echo '<p class="stock-status" style="color: yellow;">Średnia</p>';
+            echo '<p class="stock-status" style="color: yellow;">' . __('Średnia', 'lavre') . '</p>';
         } elseif ($stock_quantity >= 20) {
-            echo '<p class="stock-status" style="color: green;">Wysoka</p>';
+            echo '<p class="stock-status" style="color: green;">' . __('Wysoka', 'lavre') . '</p>';
         }
     }
 }
@@ -162,13 +162,22 @@ function bbloomer_change_gallery_columns()
 }
 function add_custom_div_before_variations_form()
 {
-    echo '<div class="custom-div">Dostępne kolory:</div>';
+    echo '<div class="custom-div">' . __('Dostepne kolory', 'lavre') . '</div>';
 }
 add_action('woocommerce_before_variations_form', 'add_custom_div_before_variations_form');
 
-
+//Add line between product counter and ordering
 add_action('woocommerce_before_shop_loop', 'custom_line', 25);
 function custom_line()
 {
     echo '<div class="archive-product-line w-full clear-both"></div>';
+}
+//remove pagination from shop page
+add_action('wp', 'remove_pagination_from_shop_page');
+
+function remove_pagination_from_shop_page()
+{
+    if (is_shop()) {
+        remove_action('woocommerce_after_shop_loop', 'woocommerce_pagination', 10);
+    }
 }

@@ -14,19 +14,18 @@ $info = get_field('info_baner', 'option'); ?>
                 </div>
             </div>
             <div class="col-span-1 grid grid-cols-1 md:grid-cols-2 gap-4 h-full items-center">
-                <!-- First sub-column -->
                 <div class="col-span-1 flex gap-5 flex-col sm:flex-row items-center justify-center md:justify-normal h-full border-r-none md:border-r md:border-borderdashed py-8">
                     <img src="<?php echo $info['icon_second']; ?>" alt="">
                     <div class="text-xl flex flex-row md:flex-col gap-1 md:gap-0">
-                        <div class="font-bold">Wysyłka:</div>
-                        <div class="">w 24h</div>
+                        <div class="font-bold"><?php echo __('Wysyłka:', 'lavre'); ?></div>
+                        <div class=""><?php echo __('w 24h', 'lavre'); ?></div>
                     </div>
                 </div>
                 <div class="col-span-1 flex flex-col sm:flex-row items-center gap-5 justify-center md:justify-normal h-full py-8">
                     <img src="<?php echo $info['icon_third']; ?>" alt="">
                     <div class="text-xl flex flex-row md:flex-col gap-1 md:gap-0">
-                        <div class="font-bold">Darmowa wysyłka</div>
-                        <div class="">już od 1000 zł</div>
+                        <div class="font-bold"><?php echo __('Darmowa wysyłka', 'lavre'); ?></div>
+                        <div class=""><?php echo __('już od 1000 zł', 'lavre'); ?></div>
                     </div>
                 </div>
             </div>

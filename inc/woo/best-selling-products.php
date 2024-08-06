@@ -8,14 +8,14 @@ function custom_best_selling_products()
         'orderby' => 'meta_value_num',
     );
 
-    $loop = new WP_Query($args);
+    $best_selling = new WP_Query($args);
 
-    if ($loop->have_posts()) { ?>
+    if ($best_selling->have_posts()) { ?>
         <div class="separator alignfull clear-both"></div>
-        <h2 class="text-3xl font-bold mb-10 mt-8">Najczęściej kupowane</h2>
+        <h2 class="text-3xl font-bold mb-10 mt-8"><?php echo esc_html__('Najczęściej kupowane', 'lavre'); ?></h2>
         <div class="products products-list clear-both grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-9 pb-16">
-            <?php while ($loop->have_posts()) {
-                $loop->the_post(); ?>
+            <?php while ($$best_selling->have_posts()) {
+                $$best_selling->the_post(); ?>
                 <?php wc_get_template_part('content', 'product'); ?>
             <?php } ?>
         </div>

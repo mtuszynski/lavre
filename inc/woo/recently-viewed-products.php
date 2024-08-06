@@ -1,7 +1,7 @@
 <?php
 function custom_recently_viewed_products()
 {
-    if (is_product() || is_product_category()) {
+    if (is_product() || is_product_category() || is_shop()) {
         if (empty($_COOKIE['recently_viewed'])) {
             return;
         }
@@ -21,14 +21,14 @@ function custom_recently_viewed_products()
             'orderby'        => 'post__in',
         );
 
-        $r = new WP_Query($query_args);
+        $recently = new WP_Query($query_args);
 
-        if ($r->have_posts()) { ?>
+        if ($recently->have_posts()) { ?>
             <div class="separator alignfull clear-both"></div>
-            <h2 class="text-3xl font-bold mb-10 mt-8">Ostatnio oglądane</h2>
+            <h2 class="text-3xl font-bold mb-10 mt-8"><?php echo __('Ostatnio oglądane', 'lavre'); ?></h2>
             <div class="products products-list clear-both grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-9 pb-16">
-                <?php while ($r->have_posts()) {
-                    $r->the_post(); ?>
+                <?php while ($recently->have_posts()) {
+                    $recently->the_post(); ?>
                     <?php wc_get_template_part('content', 'product'); ?>
                 <?php } ?>
             </div>

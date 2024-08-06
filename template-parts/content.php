@@ -10,7 +10,6 @@
 
 		<div class="entry-content">
 			<?php
-			/* translators: %s: Name of current post */
 			the_content(
 				sprintf(
 					__('Continue reading %s', 'tailpress'),

@@ -42,7 +42,7 @@ function custom_shop_loop_header()
     <?php }
     if (is_shop()) { ?>
         <div class="container mx-auto pt-12 pb-20">
-            <h1 class="text-3xl sm:text-5xl font-extrabold pb-2.5">Sklep</h1>
+            <h1 class="text-3xl sm:text-5xl font-extrabold pb-2.5"><?php esc_html_e('Sklep', 'lavre'); ?></h1>
             <?php woocommerce_breadcrumb(); ?>
         </div>
 <? }
