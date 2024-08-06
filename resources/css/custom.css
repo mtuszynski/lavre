@@ -525,16 +525,20 @@ html:not(.dgwt-wcas-overlay-mobile-on)
   .woocommerce-form-login__submit,
 .woocommerce
   .woocommerce-form.woocommerce-form-register.register
-  .woocommerce-form-register__submit {
-  @apply bg-pagination text-white py-2 px-4 rounded-sm;
+  .woocommerce-form-register__submit,
+.woocommerce-Button.button {
+  @apply !bg-pagination !text-white !py-2 !px-4 !rounded-sm;
+  border: 1px solid #1959a4 !important;
 }
 .woocommerce
   .woocommerce-form.woocommerce-form-login.login
   .woocommerce-form-login__submit:hover,
 .woocommerce
   .woocommerce-form.woocommerce-form-register.register
-  .woocommerce-form-register__submit:hover {
-  @apply bg-white text-pagination py-2 px-4 rounded-sm;
+  .woocommerce-form-register__submit:hover,
+.woocommerce-Button.button:hover {
+  @apply !bg-white !text-pagination !py-2 !px-4 !rounded-sm;
+  border: 1px solid #1959a4 !important;
 }
 .woocommerce h3 {
   @apply text-xl font-bold;

@@ -11,7 +11,7 @@ function lavre_category_category()
     ));
 
     if (!empty($product_categories) && !is_wp_error($product_categories)) { ?>
-        <div class="flex flex-wrap gap-8 py-16 justify-center">
+        <div class="flex flex-wrap gap-8 py-16 justify-center clear-both">
             <?php
             foreach ($product_categories as $category) {
                 $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
