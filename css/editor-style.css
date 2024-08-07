@@ -114,6 +114,9 @@
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
+.float-left {
+  float: left;
+}
 .clear-both {
   clear: both;
 }
@@ -219,6 +222,10 @@
 .h-full {
   height: 100%;
 }
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .max-h-\[960px\] {
   max-height: 960px;
 }
@@ -260,6 +267,9 @@
 }
 .w-full {
   width: 100%;
+}
+.\!w-full {
+  width: 100% !important;
 }
 .max-w-\[31px\] {
   max-width: 31px;

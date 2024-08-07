@@ -613,6 +613,9 @@ video {
 .col-span-1{
   grid-column: span 1 / span 1;
 }
+.float-left{
+  float: left;
+}
 .clear-both{
   clear: both;
 }
@@ -715,6 +718,10 @@ video {
 .h-auto{
   height: auto;
 }
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .h-full{
   height: 100%;
 }
@@ -724,11 +731,11 @@ video {
 .min-h-screen{
   min-height: 100vh;
 }
-.\!w-2\/4{
-  width: 50% !important;
-}
 .\!w-3{
   width: 0.75rem !important;
+}
+.\!w-full{
+  width: 100% !important;
 }
 .w-10{
   width: 2.5rem;
@@ -808,9 +815,6 @@ video {
 }
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.grid-rows-4{
-  grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 .flex-row{
   flex-direction: row;
@@ -2047,17 +2051,19 @@ html:not(.dgwt-wcas-overlay-mobile-on)
 .alignfull {
   margin-block: 0rem !important;
 }
-.single-product div.product .woocommerce-product-gallery .flex-viewport {
+/* Woocommerce product gallery */
+.single-product div.product .woocommerce-product-gallery .flex-viewport{
+  float: left;
   width: 80%;
-  float: left;
 }
-.single-product div.product .woocommerce-product-gallery .flex-control-thumbs {
-  width: 20%;
+.single-product div.product .woocommerce-product-gallery .flex-control-thumbs{
   float: left;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 20%;
 }
 ol.flex-control-nav.flex-control-thumbs{
   display: grid;
-  grid-template-rows: repeat(4, minmax(0, 1fr));
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(247 247 245 / var(--tw-border-opacity));
@@ -2065,7 +2071,7 @@ ol.flex-control-nav.flex-control-thumbs{
 .flex-control-nav.flex-control-thumbs li{
   margin-left: auto !important;
   margin-right: auto !important;
-  width: 50% !important;
+  width: 100% !important;
 }
 .flex-control-nav.flex-control-thumbs li:not(:last-child){
   border-bottom-width: 1px;

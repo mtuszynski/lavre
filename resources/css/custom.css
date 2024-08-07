@@ -546,21 +546,20 @@ html:not(.dgwt-wcas-overlay-mobile-on)
 .alignfull {
   margin-block: 0rem !important;
 }
+/* Woocommerce product gallery */
 .single-product div.product .woocommerce-product-gallery .flex-viewport {
-  width: 80%;
-  float: left;
+  @apply float-left w-4/5;
 }
 
 .single-product div.product .woocommerce-product-gallery .flex-control-thumbs {
-  width: 20%;
-  float: left;
+  @apply h-fit float-left w-1/5;
 }
 
 ol.flex-control-nav.flex-control-thumbs {
-  @apply grid grid-rows-4 border border-light;
+  @apply grid border border-light;
 }
 .flex-control-nav.flex-control-thumbs li {
-  @apply !w-2/4 !mx-auto;
+  @apply !w-full !mx-auto;
 }
 .flex-control-nav.flex-control-thumbs li:not(:last-child) {
   @apply border-b border-b-light;
